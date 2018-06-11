@@ -10,10 +10,11 @@ This challenge is designed to assess the ability of a front-end candidate to wri
 ## Project description
 
 Write a component that renders arbitrary component tree of checkboxes and radios state.
-This component should have an input box and three buttons: 
-when clicked, the first button will serialize the full state of the application and copy it to the clipboard. 
-This state then can be pasted to the input box and reset the currentapplication state on the click of the second button.
-Click on third button should load state from remote endpoint and render it (no need to implement server side, just assume there is webservice returns valid app state)
+
+This component should have an input box and three buttons:
+1. when clicked, the first button will serialize the full state of the application and copy it to the clipboard. 
+2. This state then can be pasted to the input box and reset the current application state on the click of the second button.
+3. Click on third button should load state from remote endpoint and render it (no need to implement server side, just assume there is webservice returns valid app state)
 
 Refer to the image below for a simple (but not complete) example.
 
