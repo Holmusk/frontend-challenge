@@ -1,0 +1,46 @@
+.container {
+    background-color: antiquewhite;
+    width: 100%;
+}
+
+.input {
+    height: 10px;
+    width: 200px;
+    margin-right : 20px;
+}
+.controll-section button {
+    color: black;
+    background-color: aliceblue;
+    margin-right: 20px;
+    border: 1px solid gainsboro;
+    cursor: pointer;
+}
+
+input:focus {
+    border: 2px solid green;
+}
+
+li {
+    list-style: none;
+}
+.copy-to-clipboard {
+    color: black;
+    background-color: aliceblue;
+    margin-right: 20px;
+    border: 1px solid gainsboro;
+    cursor: pointer;   
+}
+input[type=checkbox]:checked:after {
+    background: green !important;
+    color: black !important;
+}
+input[type=checkbox]:checked + label {
+	color: white;
+	background: #86b3c1;
+}
+.copied-color {
+    color: green;
+}
+.input-container {
+    display: inline-block;
+}

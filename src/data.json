@@ -1,0 +1,45 @@
+{
+  "radioGroupName": "myradio",
+  "selectedValue": "none",
+  "radios": [
+    {
+      "key": 1,
+      "label": "radio1",
+      "value": "radio1",
+      "checkBoxes": [
+        {
+          "key": 101,
+          "label": "checkbox1",
+          "isChecked": false
+        },
+        {
+          "key": 102,
+          "label": "checkbox2",
+          "isChecked": false
+        }
+      ]
+    },
+    {
+      "key": 2,
+      "label": "radio2",
+      "value": "radio2",
+      "checkBoxes": [
+        {
+          "key": 201,
+          "label": "checkbox1",
+          "isChecked": false
+        },
+        {
+          "key": 202,
+          "label": "checkbox2",
+          "isChecked": false
+        },
+        {
+          "key": 203,
+          "label": "checkbox3",
+          "isChecked": false
+        }
+      ]
+    }
+  ]
+}
