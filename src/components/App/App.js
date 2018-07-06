@@ -1,3 +1,5 @@
+import '../../store';
+
 import Container from '../Container/Container.vue';
 
 export default {
