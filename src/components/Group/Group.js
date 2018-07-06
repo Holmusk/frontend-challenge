@@ -1,5 +1,7 @@
 import Vue from 'vue';
 
+import '../Item/Item.vue';
+
 import store from '../../store';
 
 Vue.component('Group', {
@@ -25,6 +27,14 @@ Vue.component('Group', {
         store.commit('setSelectedGroupId', { groupId: value });
       },
     },
+
+    disabled () {
+      return store.state.selectedGroupId === String(this.group.id);
+    },
+
+    items () {
+      return store.getters['entities/items/query']().where('groupId', this.group.id).get();
+    },
   },
 
   template: `
@@ -37,6 +47,15 @@ Vue.component('Group', {
         v-model="selectedGroupId"
       />
       <label v-bind:for="elementId">{{group.title}}</label>
+
+      <div>
+        <div v-for="item in items" v-bind:key="item.id">
+          <Item
+            v-bind:item="item"
+            v-bind:disabled="disabled"
+          />
+        </div>
+      </div>
     </div>
   `,
 });

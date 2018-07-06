@@ -3,6 +3,7 @@ import Vue from 'vue';
 import store from '../../store';
 
 let nextGroupId = 1;
+let nextItemId = 1;
 
 Vue.component('Controls', {
   data: () => ({
@@ -18,6 +19,10 @@ Vue.component('Controls', {
 
   methods: {
     createGroup () {
+      if (!this.$data.newGroupTitle) {
+        return;
+      }
+
       store.dispatch('entities/groups/insert', {
         data: {
           id: nextGroupId++,
@@ -30,14 +35,18 @@ Vue.component('Controls', {
     },
 
     createItem () {
+      if (!this.$data.newItemTitle) {
+        return;
+      }
+
       const selectedGroupId = store.getters.selectedGroupId;
 
       if (selectedGroupId) {
         store.dispatch('entities/items/insert', {
           data: {
-            id: nextGroupId++,
+            id: nextItemId++,
             groupId: selectedGroupId,
-            title: this.$data.newGroupTitle,
+            title: this.$data.newItemTitle,
             checked: false,
           },
         });
@@ -48,11 +57,11 @@ Vue.component('Controls', {
   template: `
     <div>
       <div>
-        <input type="text" name="new-group-title" id="new-group-title" v-model="newGroupTitle" />
+        <input type="text" name="new-group-title" id="new-group-title" v-model.trim="newGroupTitle" />
         <input type="button" value="Create group" v-on:click="createGroup" />
       </div>
       <div v-if="hasSelectedGroup">
-        <input type="text" name="new-item-title" id="new-item-title" v-model="newItemTitle" />
+        <input type="text" name="new-item-title" id="new-item-title" v-model.trim="newItemTitle" />
         <input type="button" value="Create item" v-on:click="createItem" />
       </div>
     </div>
