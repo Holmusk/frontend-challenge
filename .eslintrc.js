@@ -43,7 +43,6 @@ module.exports = {
     "no-mixed-operators": 0,
     "no-plusplus": 0,
 
-    "import/extensions": [2, { "js": "never" }],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "import/no-named-as-default": 0,
 
