@@ -1,5 +1,7 @@
 import Vue from 'vue';
 
+import store from '../../store';
+
 Vue.component('Item', {
   props: {
     item: {
@@ -18,6 +20,21 @@ Vue.component('Item', {
     elementId () {
       return `item-${this.item.id}`;
     },
+
+    checked: {
+      get () {
+        return this.item.checked;
+      },
+
+      set (value) {
+        store.dispatch('entities/items/update', {
+          where: this.item.id,
+          data: {
+            checked: value,
+          },
+        });
+      },
+    },
   },
 
   template: `
@@ -27,7 +44,7 @@ Vue.component('Item', {
         v-bind:name="elementId"
         v-bind:id="elementId"
         v-bind:value="item.id"
-        v-model="item.checked"
+        v-model="checked"
       />
       <label v-bind:for="elementId">{{item.title}}</label>
     </div>
