@@ -16,18 +16,44 @@ database.register(Item.item, Item.collection);
 
 const store = new Vuex.Store({
   state: {
-    selectedGroupId: '',
+    selectedGroupId: null,
+    nextGroupId: 1,
+    nextItemId: 1,
   },
 
   getters: {
     selectedGroupId (state) {
       return state.selectedGroupId;
     },
+
+    nextGroupId (state) {
+      return state.nextGroupId;
+    },
+
+    nextItemId (state) {
+      return state.nextItemId;
+    },
   },
 
   mutations: {
     setSelectedGroupId (state, { groupId }) {
       state.selectedGroupId = groupId;
+    },
+
+    setNextGroupId (state, { nextGroupId }) {
+      state.nextGroupId = nextGroupId;
+    },
+
+    setNextItemId (state, { nextItemId }) {
+      state.nextItemId = nextItemId;
+    },
+
+    incrementNextGroupId (state) {
+      state.nextGroupId++;
+    },
+
+    incrementNextItemId (state) {
+      state.nextItemId++;
     },
   },
 

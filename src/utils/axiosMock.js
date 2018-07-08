@@ -8,8 +8,6 @@ import config from '../../config';
 const axiosMock = new AxiosMockAdapter(axios);
 
 const dataMock = () => {
-  console.log('data', data);
-
   axiosMock
     .onGet(config.dataUri)
     .reply(200, JSON.stringify(data));
