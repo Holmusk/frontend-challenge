@@ -1,8 +1,8 @@
-import Vue from 'vue';
-
 import store from '@/store';
 
-Vue.component('CreateItemForm', {
+export default {
+  name: 'CreateItemForm',
+
   data: () => ({
     newItemTitle: '',
   }),
@@ -43,19 +43,4 @@ Vue.component('CreateItemForm', {
       this.$data.newItemTitle = '';
     },
   },
-
-  template: `
-    <div v-if="hasSelectedGroup">
-      <input
-        type="text"
-        name="new-item-title"
-        id="new-item-title"
-        v-model.trim="newItemTitle"
-        placeholder="Item title"
-      />
-      <input type="button" value="Create item" v-on:click="createItem" />
-    </div>
-  `,
-});
-
-export default {};
+};

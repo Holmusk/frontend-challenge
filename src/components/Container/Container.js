@@ -1,6 +1,11 @@
-import '@/components/Controls/Controls.vue';
-import '@/components/List/List.vue';
+import AppControls from '@/components/AppControls/AppControls.vue';
+import CheckboxList from '@/components/CheckboxList/CheckboxList.vue';
 
 export default {
   name: 'Container',
+
+  components: {
+    AppControls,
+    CheckboxList,
+  },
 };

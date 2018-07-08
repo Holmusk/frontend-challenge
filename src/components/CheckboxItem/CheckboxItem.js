@@ -1,8 +1,8 @@
-import Vue from 'vue';
-
 import store from '@/store';
 
-Vue.component('Item', {
+export default {
+  name: 'CheckboxItem',
+
   props: {
     item: {
       // @todo Use VueTypes package for better type validation.
@@ -36,20 +36,4 @@ Vue.component('Item', {
       },
     },
   },
-
-  template: `
-    <div>
-      <input
-        type="checkbox"
-        v-bind:name="elementId"
-        v-bind:id="elementId"
-        v-bind:value="item.id"
-        v-bind:disabled="disabled"
-        v-model="checked"
-      />
-      <label v-bind:for="elementId">{{item.title}}</label>
-    </div>
-  `,
-});
-
-export default {};
+};

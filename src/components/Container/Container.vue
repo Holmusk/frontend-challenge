@@ -1,7 +1,7 @@
 <template>
   <div id="container">
-    <Controls />
-    <List />
+    <AppControls />
+    <CheckboxList />
   </div>
 </template>
 

@@ -1,5 +1,3 @@
-import Vue from 'vue';
-
 import copyToClipboard from 'copy-to-clipboard';
 
 import axios from '@/utils/axios';
@@ -26,7 +24,9 @@ const restoreState = (newState) => {
   store.commit('setSelectedGroupId', { groupId: newState.selectedGroupId || null });
 };
 
-Vue.component('ManageStateForm', {
+export default {
+  name: 'ManageStateForm',
+
   data: () => ({
     serializedState: '',
   }),
@@ -71,22 +71,4 @@ Vue.component('ManageStateForm', {
         .catch(console.error);
     },
   },
-
-  template: `
-    <div>
-      <textarea
-        name="serialized-state"
-        id="serialized-state"
-        v-model="serializedState"
-        placeholder="Please paste state here in JSON format"
-      >
-      </textarea>
-
-      <input type="button" value="Set state" v-on:click="setState" />
-      <input type="button" value="Copy state to clipboard" v-on:click="copyState" />
-      <input type="button" value="Load state" v-on:click="loadState" />
-    </div>
-  `,
-});
-
-export default {};
+};

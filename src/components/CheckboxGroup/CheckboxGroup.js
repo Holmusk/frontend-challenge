@@ -1,10 +1,14 @@
-import Vue from 'vue';
-
-import '@/components/Item/Item.vue';
+import CheckboxItem from '@/components/CheckboxItem/CheckboxItem.vue';
 
 import store from '@/store';
 
-Vue.component('Group', {
+export default {
+  name: 'CheckboxGroup',
+
+  components: {
+    CheckboxItem,
+  },
+
   props: {
     group: {
       // @todo Use VueTypes package for better type validation.
@@ -40,28 +44,4 @@ Vue.component('Group', {
       return store.getters['entities/items/query']().where('groupId', this.group.id).get();
     },
   },
-
-  template: `
-    <div>
-      <input
-        type="radio"
-        name="group"
-        v-bind:id="elementId"
-        v-bind:value="group.id"
-        v-model="selectedGroupId"
-      />
-      <label v-bind:for="elementId">{{group.title}}</label>
-
-      <div>
-        <div v-for="item in items" v-bind:key="item.id">
-          <Item
-            v-bind:item="item"
-            v-bind:disabled="disabled"
-          />
-        </div>
-      </div>
-    </div>
-  `,
-});
-
-export default {};
+};

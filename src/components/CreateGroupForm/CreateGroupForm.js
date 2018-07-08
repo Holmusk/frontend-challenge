@@ -1,8 +1,8 @@
-import Vue from 'vue';
-
 import store from '@/store';
 
-Vue.component('CreateGroupForm', {
+export default {
+  name: 'CreateGroupForm',
+
   data: () => ({
     newGroupTitle: '',
   }),
@@ -33,19 +33,4 @@ Vue.component('CreateGroupForm', {
       this.$data.newGroupTitle = '';
     },
   },
-
-  template: `
-    <div>
-      <input
-        type="text"
-        name="new-group-title"
-        id="new-group-title"
-        v-model.trim="newGroupTitle"
-        placeholder="Group title"
-      />
-      <input type="button" value="Create group" v-on:click="createGroup" />
-    </div>
-  `,
-});
-
-export default {};
+};
