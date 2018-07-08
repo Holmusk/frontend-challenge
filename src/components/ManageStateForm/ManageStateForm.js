@@ -17,11 +17,11 @@ const restoreState = (newState) => {
 
   const groups = [ ...newState.groups ];
   store.dispatch('entities/groups/create', { data: groups });
-  store.commit('setNextGroupId', groups.reduce(getMaxId, 0) + 1);
+  store.commit('setNextGroupId', { nextGroupId: groups.reduce(getMaxId, 0) + 1 });
 
   const items = [ ...newState.items ];
   store.dispatch('entities/items/create', { data: items });
-  store.commit('setNextItemId', items.reduce(getMaxId, 0) + 1);
+  store.commit('setNextItemId', { nextItemId: items.reduce(getMaxId, 0) + 1 });
 
   store.commit('setSelectedGroupId', { groupId: newState.selectedGroupId || null });
 };
