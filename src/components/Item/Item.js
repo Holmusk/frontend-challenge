@@ -44,6 +44,7 @@ Vue.component('Item', {
         v-bind:name="elementId"
         v-bind:id="elementId"
         v-bind:value="item.id"
+        v-bind:disabled="disabled"
         v-model="checked"
       />
       <label v-bind:for="elementId">{{item.title}}</label>
