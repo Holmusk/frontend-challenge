@@ -2,11 +2,11 @@ import Vue from 'vue';
 
 import copyToClipboard from 'copy-to-clipboard';
 
-import axios from '../../utils/axios';
-import '../../utils/axiosMock';
+import axios from '@/utils/axios';
+import '@/utils/axiosMock';
 
-import config from '../../config';
-import store from '../../store';
+import config from '@/config';
+import store from '@/store';
 
 const restoreState = (newState) => {
   if (!newState) {

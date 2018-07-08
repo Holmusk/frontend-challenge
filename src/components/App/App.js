@@ -1,6 +1,6 @@
-import '../../store';
+import '@/store';
 
-import Container from '../Container/Container.vue';
+import Container from '@/components/Container/Container.vue';
 
 export default {
   name: 'App',

@@ -1,8 +1,8 @@
 import Vue from 'vue';
 
-import '../Group/Group.vue';
+import '@/components/Group/Group.vue';
 
-import store from '../../store';
+import store from '@/store';
 
 Vue.component('List', {
   computed: {

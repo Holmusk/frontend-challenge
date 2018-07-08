@@ -1,5 +1,5 @@
-import '../Controls/Controls.vue';
-import '../List/List.vue';
+import '@/components/Controls/Controls.vue';
+import '@/components/List/List.vue';
 
 export default {
   name: 'Container',

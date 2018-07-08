@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-import store from '../../store';
+import store from '@/store';
 
 Vue.component('Item', {
   props: {

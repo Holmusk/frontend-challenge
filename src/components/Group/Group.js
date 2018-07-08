@@ -1,8 +1,8 @@
 import Vue from 'vue';
 
-import '../Item/Item.vue';
+import '@/components/Item/Item.vue';
 
-import store from '../../store';
+import store from '@/store';
 
 Vue.component('Group', {
   props: {

@@ -1,9 +1,9 @@
 import AxiosMockAdapter from 'axios-mock-adapter';
 
-import axios from './axios';
+import axios from '@/utils/axios';
 
-import data from './data';
-import config from '../../config';
+import data from '@/utils/data';
+import config from '@/config';
 
 const axiosMock = new AxiosMockAdapter(axios);
 

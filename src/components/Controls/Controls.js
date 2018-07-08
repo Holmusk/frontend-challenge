@@ -1,8 +1,8 @@
 import Vue from 'vue';
 
-import '../ManageStateForm/ManageStateForm.vue';
-import '../CreateGroupForm/CreateGroupForm.vue';
-import '../CreateItemForm/CreateItemForm.vue';
+import '@/components/ManageStateForm/ManageStateForm.vue';
+import '@/components/CreateGroupForm/CreateGroupForm.vue';
+import '@/components/CreateItemForm/CreateItemForm.vue';
 
 Vue.component('Controls', {
   template: `
