@@ -7,4 +7,6 @@
 
 <script src="./Container.js"></script>
 
-<style src="./Container.css"></style>
+<style lang="scss">
+  @import 'Container.scss';
+</style>

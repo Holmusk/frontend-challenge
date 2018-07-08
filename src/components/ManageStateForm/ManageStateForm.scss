@@ -1,0 +1,33 @@
+
+.manage-state {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  flex-wrap: wrap;
+
+  textarea {
+    flex-grow: 1;
+    width: 100%;
+    flex-basis: 100%;
+    margin-bottom: 1em;
+    height: 80px;
+    // @todo Seems like Vue.js attaches some kind of script to textareas
+    // that does some weird stuff to make textareas stretchable. And also
+    // makes next line invalid.
+    // max-width: 100%;
+  }
+
+  input[type="button"] {
+    flex-grow: 1;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

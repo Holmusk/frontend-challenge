@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-controls">
     <ManageStateForm />
     <CreateGroupForm />
     <CreateItemForm />
@@ -8,4 +8,6 @@
 
 <script src="./AppControls.js"></script>
 
-<style src="./AppControls.css"></style>
+<style lang="scss">
+  @import 'AppControls.scss';
+</style>

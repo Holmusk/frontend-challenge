@@ -9,7 +9,7 @@
     />
     <label v-bind:for="elementId">{{group.title}}</label>
 
-    <div>
+    <div class="checkbox-group-items-container">
       <div v-for="item in items" v-bind:key="item.id">
         <CheckboxItem
           v-bind:item="item"
@@ -22,4 +22,6 @@
 
 <script src="./CheckboxGroup.js"></script>
 
-<style src="./CheckboxGroup.css"></style>
+<style lang="scss">
+  @import 'CheckboxGroup.scss';
+</style>

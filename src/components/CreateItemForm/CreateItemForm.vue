@@ -1,5 +1,5 @@
 <template>
-  <div v-if="hasSelectedGroup">
+  <div v-if="hasSelectedGroup" class="create-item-form">
     <input
       type="text"
       name="new-item-title"
@@ -13,4 +13,6 @@
 
 <script src="./CreateItemForm.js"></script>
 
-<style src="./CreateItemForm.css"></style>
+<style lang="scss">
+  @import 'CreateItemForm.scss';
+</style>

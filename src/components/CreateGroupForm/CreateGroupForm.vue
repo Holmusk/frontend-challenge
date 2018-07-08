@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="create-group-form">
     <input
       type="text"
       name="new-group-title"
@@ -13,4 +13,6 @@
 
 <script src="./CreateGroupForm.js"></script>
 
-<style src="./CreateGroupForm.css"></style>
+<style lang="scss">
+  @import 'CreateGroupForm.scss';
+</style>

@@ -13,4 +13,6 @@
 </template>
 <script src="./CheckboxItem.js"></script>
 
-<style src="./CheckboxItem.css"></style>
+<style lang="scss">
+  @import 'CheckboxItem.scss';
+</style>

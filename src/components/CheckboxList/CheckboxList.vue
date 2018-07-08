@@ -8,4 +8,6 @@
 
 <script src="./CheckboxList.js"></script>
 
-<style src="./CheckboxList.css"></style>
+<style lang="scss">
+  @import 'CheckboxList.scss';
+</style>
