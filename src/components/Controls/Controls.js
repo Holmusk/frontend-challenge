@@ -2,10 +2,32 @@ import Vue from 'vue';
 
 import copyToClipboard from 'copy-to-clipboard';
 
+import axios from '../../utils/axios';
+import '../../utils/axiosMock';
+
+import config from '../../config';
 import store from '../../store';
 
 let nextGroupId = 1;
 let nextItemId = 1;
+
+const restoreState = (newState) => {
+  if (!newState) {
+    return;
+  }
+
+  const getMaxId = (value, item) => Math.max(value, item.id);
+
+  const groups = [ ...newState.groups ];
+  nextGroupId = groups.reduce(getMaxId, 0) + 1;
+  store.dispatch('entities/groups/create', { data: groups });
+
+  const items = [ ...newState.items ];
+  nextItemId = items.reduce(getMaxId, 0) + 1;
+  store.dispatch('entities/items/create', { data: items });
+
+  store.commit('setSelectedGroupId', { groupId: newState.selectedGroupId || null });
+};
 
 Vue.component('Controls', {
   data: () => ({
@@ -58,7 +80,7 @@ Vue.component('Controls', {
         },
       });
 
-      this.$data.newGroupTitle = '';
+      this.$data.newItemTitle = '';
     },
 
     setState () {
@@ -76,21 +98,7 @@ Vue.component('Controls', {
         console.error(error);
       }
 
-      if (!newState) {
-        return;
-      }
-
-      const getMaxId = (value, item) => Math.max(value, item.id);
-
-      const groups = [ ...newState.groups ];
-      nextGroupId = groups.reduce(getMaxId, 0) + 1;
-      store.dispatch('entities/groups/create', { data: groups });
-
-      const items = [ ...newState.items ];
-      nextItemId = items.reduce(getMaxId, 0) + 1;
-      store.dispatch('entities/items/create', { data: items });
-
-      store.commit('setSelectedGroupId', { groupId: newState.selectedGroupId || null });
+      restoreState(newState);
     },
 
     copyState () {
@@ -99,12 +107,19 @@ Vue.component('Controls', {
         groups: store.getters['entities/groups/all'](),
         items: store.getters['entities/items/all'](),
       };
-      console.warn();
-      copyToClipboard(JSON.stringify(state));
+
+      const copySuccess = copyToClipboard(JSON.stringify(state));
+      if (!copySuccess) {
+        // Sadly, this package isn't verbose enough to determine what exactly went wrong.
+        console.error('Failed to copy serialized data to clipboard due to browser restrictions (probably)');
+      }
     },
 
     loadState () {
-      // To be implemented.
+      axios
+        .get(config.dataUri)
+        .then((response) => restoreState(response.data))
+        .catch(console.error);
     },
   },
 
