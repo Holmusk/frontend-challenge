@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxItem.vue should render correctly 1`] = `
+<div>
+  <input
+    disabled="disabled"
+    id="item-1"
+    name="item-1"
+    type="checkbox"
+    value="1"
+  />
+   
+  <label
+    for="item-1"
+  >
+    Test checkbox item
+  </label>
+</div>
+`;
