@@ -20,25 +20,21 @@ export default {
         return;
       }
 
-      const {
-        selectedGroupId,
-        nextItemId,
-      } = store.getters;
-
+      const { selectedGroupId } = store.getters;
       if (!selectedGroupId) {
         return;
       }
 
       store.dispatch('entities/items/insert', {
         data: {
-          id: nextItemId,
+          id: store.getters['entities/items/nextItemId'],
           groupId: selectedGroupId,
           title: newItemTitle,
           checked: false,
         },
       });
 
-      store.commit('incrementNextItemId');
+      store.commit('entities/items/incrementNextItemId');
 
       this.$data.newItemTitle = '';
     },

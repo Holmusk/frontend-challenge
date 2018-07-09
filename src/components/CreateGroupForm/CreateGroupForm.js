@@ -22,13 +22,13 @@ export default {
 
       store.dispatch('entities/groups/insert', {
         data: {
-          id: store.getters.nextGroupId,
+          id: store.getters['entities/groups/nextGroupId'],
           title: newGroupTitle,
           items: null,
         },
       });
 
-      store.commit('incrementNextGroupId');
+      store.commit('entities/groups/incrementNextGroupId');
 
       this.$data.newGroupTitle = '';
     },
