@@ -36,16 +36,16 @@ Refer to the image below for a simple (but not complete) example.
 
 ## Setup, build and test
 
-# Install dependencies
+### Install dependencies
 
 npm install
 
-# Run dev server
+### Run dev server
 
 npm start
 
 Site will be available at http://localhost:8080
 
-# Run unit tests
+### Run unit tests
 
 npm test
