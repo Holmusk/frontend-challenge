@@ -3,17 +3,17 @@
     <input
       type="radio"
       name="group"
-      v-bind:id="elementId"
-      v-bind:value="group.id"
+      :id="elementId"
+      :value="group.id"
       v-model="selectedGroupId"
     />
-    <label v-bind:for="elementId">{{group.title}}</label>
+    <label :for="elementId">{{group.title}}</label>
 
     <div class="checkbox-group-items-container">
-      <div v-for="item in items" v-bind:key="item.id">
+      <div v-for="item in items" :key="item.id">
         <CheckboxItem
-          v-bind:item="item"
-          v-bind:disabled="disabled"
+          :item="item"
+          :disabled="disabled"
         />
       </div>
     </div>
@@ -22,6 +22,6 @@
 
 <script src="./CheckboxGroup.js"></script>
 
-<style lang="scss">
+<style scoped lang="scss">
   @import 'CheckboxGroup.scss';
 </style>

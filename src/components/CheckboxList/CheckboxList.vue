@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div v-for="group in groups" v-bind:key="group.id">
-      <CheckboxGroup v-bind:group="group" />
+    <div v-for="group in groups" :key="group.id">
+      <CheckboxGroup :group="group" />
     </div>
   </div>
 </template>
 
 <script src="./CheckboxList.js"></script>
 
-<style lang="scss">
+<style scoped lang="scss">
   @import 'CheckboxList.scss';
 </style>

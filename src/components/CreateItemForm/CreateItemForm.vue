@@ -1,18 +1,19 @@
 <template>
-  <div v-if="hasSelectedGroup" class="create-item-form">
-    <input
-      type="text"
-      name="new-item-title"
-      id="new-item-title"
+  <v-form v-if="hasSelectedGroup">
+    <v-text-field
       v-model.trim="newItemTitle"
-      placeholder="Item title"
+      label="Item title"
+      clearable
+      box
     />
-    <input type="button" value="Create item" v-on:click="createItem" />
-  </div>
+    <v-btn @click.stop="createItem">
+      Create item
+    </v-btn>
+  </v-form>
 </template>
 
 <script src="./CreateItemForm.js"></script>
 
-<style lang="scss">
+<style scoped lang="scss">
   @import 'CreateItemForm.scss';
 </style>

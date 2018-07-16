@@ -1,18 +1,19 @@
 <template>
-  <div class="create-group-form">
-    <input
-      type="text"
-      name="new-group-title"
-      id="new-group-title"
+  <v-form>
+    <v-text-field
       v-model.trim="newGroupTitle"
-      placeholder="Group title"
+      label="Group title"
+      clearable
+      box
     />
-    <input type="button" value="Create group" v-on:click="createGroup" />
-  </div>
+    <v-btn @click.stop="createGroup">
+      Create group
+    </v-btn>
+  </v-form>
 </template>
 
 <script src="./CreateGroupForm.js"></script>
 
-<style lang="scss">
+<style scoped lang="scss">
   @import 'CreateGroupForm.scss';
 </style>
