@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxGroup.vue should render correctly 1`] = `
+<div>
+  <input
+    id="group-1"
+    name="group"
+    type="radio"
+    value="1"
+  />
+   
+  <label
+    for="group-1"
+  >
+    Test checkbox group
+  </label>
+   
+  <div
+    class="checkbox-group-items-container"
+  />
+</div>
+`;

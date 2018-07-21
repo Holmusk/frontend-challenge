@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ManageStateForm.vue should render correctly 1`] = `
+<div
+  class="manage-state"
+>
+  <textarea
+    id="serialized-state"
+    name="serialized-state"
+    placeholder="Please paste state here in JSON format"
+  />
+   
+  <input
+    type="button"
+    value="Set state"
+  />
+   
+  <input
+    type="button"
+    value="Copy state to clipboard"
+  />
+   
+  <input
+    type="button"
+    value="Load state"
+  />
+</div>
+`;

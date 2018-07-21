@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateGroupForm.vue should render correctly 1`] = `
+<div
+  class="create-group-form"
+>
+  <input
+    id="new-group-title"
+    name="new-group-title"
+    placeholder="Group title"
+    type="text"
+  />
+   
+  <input
+    type="button"
+    value="Create group"
+  />
+</div>
+`;

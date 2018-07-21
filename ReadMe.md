@@ -33,3 +33,19 @@ Refer to the image below for a simple (but not complete) example.
 2. Code readability
 3. Commit history
 4. Test coverage
+
+## Setup, build and test
+
+### Install dependencies
+
+npm install
+
+### Run dev server
+
+npm start
+
+Site will be available at http://localhost:8080
+
+### Run unit tests
+
+npm test
